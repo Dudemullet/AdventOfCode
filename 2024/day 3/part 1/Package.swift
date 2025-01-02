@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "part 1",
+    platforms: [.macOS(.v13)],
     products: [],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -20,5 +21,9 @@ let package = Package(
             name: "Part1",
             sources: ["Part1.swift"]
         ),
+        .testTarget(
+          name: "Test",
+          dependencies: ["Part1"]
+        )
     ]
 )
